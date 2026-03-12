@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HalfScorecard, FullScorecard } from "./CourseOverview";
 import type { CourseOverviewData } from "./CourseOverview";
+import ShareMenu from "./ShareMenu";
 
 interface CourseScorecard {
   id: number;
@@ -446,6 +447,16 @@ export default function CourseScorecardTable() {
               <span className="font-barlow text-sm font-semibold text-primary underline">
                 View Shots
               </span>
+
+              <ShareMenu
+                courseName={scorecard.overview.courseName}
+                date={scorecard.date}
+                mode={scorecard.mode}
+                holesCompleted={scorecard.holesCompleted}
+                scoreToPar={scorecard.scoreToPar}
+                front9={scorecard.overview.front9}
+                back9={scorecard.overview.back9}
+              />
             </div>
           </div>
 
